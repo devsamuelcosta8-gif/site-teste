@@ -384,20 +384,31 @@ footer {
    8. HINT DE TOQUE — mobile only
 ========================================== */
 .touch-hint {
-    display: none;
+    display: block; /* Mudamos para block para a animação rodar livremente */
     position: fixed;
     bottom: 30px;
     left: 50%;
     transform: translateX(-50%);
-    color: var(--text-muted);
-    font-size: 0.75rem;
+    font-size: 0.85rem; /* Aumentei só um pouquinho para ajudar na leitura */
     letter-spacing: 1px;
     text-transform: uppercase;
     z-index: 50;
     pointer-events: none;
-    opacity: 0;
     white-space: nowrap;
-    animation: hintFade 3s ease forwards 2s;
+
+    /* 1. NOVA COR CHAMATIVA (Roxo/Violeta Neon que destaca no fundo escuro) */
+    color: #bc6ff1; 
+    text-shadow: 0 0 10px rgba(188, 111, 241, 0.6);
+    font-weight: 600;
+
+    /* Opcional: Adicionar um fundinho escuro sutil para dar contraste se a imagem de fundo for clara */
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 6px 16px;
+    border-radius: 20px;
+
+    /* 2. NOVO TEMPO DA ANIMAÇÃO */
+    /* Ela vai durar 6 segundos no total, começando assim que a página carregar */
+    animation: hintFadeRenovado 6s ease forwards;
 }
 
 @keyframes hintFade {
