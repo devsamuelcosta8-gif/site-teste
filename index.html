@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Elaine | Psicologia Clínica Avançada</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="splash-screen">
+        <div class="splash-content">
+            <div class="logo splash-logo">Elaine<span>.</span></div>
+            <p class="splash-phrase">Equilibrando mentes, construindo realidades.</p>
+            <div class="progress-bar-container">
+                <div id="progress-bar-fill"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="noise"></div>
+
+    <div id="canvas-container">
+        <canvas id="webgl-canvas"></canvas>
+    </div>
+
+    <header>
+        <a href="#" class="logo">Elaine<span>.</span></a>
+        <nav>
+            <a href="#hero">Início</a>
+            <a href="#mente">A Mente</a>
+            <a href="#sobre">Especialista</a>
+            <a href="#planos">Planos</a>
+        </nav>
+        <a href="https://wa.me/5512996135234" target="_blank" class="btn-header">Agendar</a>
+    </header>
+
+    <!-- Hint de toque: exibido via JS apenas no mobile -->
+    <div class="touch-hint" id="touch-hint">
+        <i class="bi bi-hand-index"></i> Arraste para girar
+    </div>
+
+    <main>
+        <section id="hero">
+            <h1>A sua mente dita a sua <span class="gradient-text">realidade.</span></h1>
+            <p>Não seja refém dos seus próprios pensamentos. Assuma o controle através de uma psicologia clínica estruturada, profunda e focada em resultados reais.</p>
+            <a href="#mente" class="btn-primary">Iniciar Jornada <i class="bi bi-arrow-down"></i></a>
+        </section>
+
+        <section id="mente" class="mind-section">
+            <div class="glass-card fade-up">
+                <span style="color: var(--accent-cyan); letter-spacing: 2px; text-transform: uppercase; font-size: 0.8rem;">O Cenário Atual</span>
+                <h2>O Peso do Agora</h2>
+                <p>Ansiedade, Burnout e sobrecarga constante. O cérebro humano moderno está operando acima do limite. Se você não apertar o botão de pausa, a sua mente fará isso por você de forma brutal.</p>
+            </div>
+        </section>
+
+        <section class="mind-section right">
+            <div class="glass-card fade-up">
+                <span style="color: var(--accent-purple); letter-spacing: 2px; text-transform: uppercase; font-size: 0.8rem;">A Solução</span>
+                <h2>Desconstruindo Padrões</h2>
+                <p>A terapia não é apenas desabafo; é a reengenharia das suas conexões neurais. Aprenda a mapear gatilhos, tratar traumas e construir uma resiliência emocional inabalável.</p>
+            </div>
+        </section>
+
+        <section id="sobre">
+            <div class="sobre-img fade-up">
+                <img src="./assets/images/img-mae-sem-fundo.png" alt="Elaine - Psicóloga Clínica">
+            </div>
+            <div class="sobre-text fade-up">
+                <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Prazer, <span class="gradient-text">Elaine.</span></h2>
+                <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.6; margin-bottom: 30px;">Com anos de dedicação ao comportamento humano, minha missão é fornecer as ferramentas necessárias para que você alcance alta performance mental e controle emocional absoluto.</p>
+                <ul style="list-style: none; margin-bottom: 30px; color: var(--text-light);">
+                    <li style="margin-bottom: 10px;"><i class="bi bi-check-circle-fill" style="color: var(--accent-cyan);"></i> Especialista em Desenvolvimento Pessoal</li>
+                    <li style="margin-bottom: 10px;"><i class="bi bi-check-circle-fill" style="color: var(--accent-cyan);"></i> Tratamento de Ansiedade e Burnout</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="planos">
+            <h2 style="font-size: 3rem; margin-bottom: 10px;" class="fade-up">Investimento</h2>
+            <p style="color: var(--text-muted); margin-bottom: 50px;" class="fade-up">Escolha o formato ideal para o seu momento.</p>
+
+            <div class="planos-grid">
+                <div class="glass-card plano-card fade-up">
+                    <h3>Sessão Avulsa</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Para demandas pontuais e direcionamento rápido.</p>
+                    <div class="preco">Consulte</div>
+                    <ul>
+                        <li><i class="bi bi-camera-video"></i> Sessão Online de 50 min</li>
+                        <li><i class="bi bi-chat-left-dots"></i> Análise de cenário atual</li>
+                        <li><i class="bi bi-compass"></i> Plano de ação inicial</li>
+                    </ul>
+                    <a href="https://wa.me/5512996135234?text=Olá! Gostaria de informações sobre a Sessão Avulsa." target="_blank" class="btn-primary" style="width: 100%; justify-content: center;">Agendar Sessão</a>
+                </div>
+
+                <div class="glass-card plano-card fade-up" style="border: 1px solid var(--accent-cyan); position: relative;">
+                    <div style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--accent-cyan); color: #000; padding: 5px 15px; border-radius: 20px; font-weight: bold; font-size: 0.8rem;">MAIS ESCOLHIDO</div>
+                    <h3>Acompanhamento</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Tratamento profundo para transformação real.</p>
+                    <div class="preco">Mensal</div>
+                    <ul>
+                        <li><i class="bi bi-calendar-check"></i> 4 Sessões mensais (1/semana)</li>
+                        <li><i class="bi bi-whatsapp"></i> Suporte via WhatsApp</li>
+                        <li><i class="bi bi-graph-up-arrow"></i> Evolução comportamental contínua</li>
+                    </ul>
+                    <a href="https://wa.me/5512996135234?text=Olá! Gostaria de iniciar o Acompanhamento Mensal." target="_blank" class="btn-primary" style="width: 100%; justify-content: center;">Iniciar Tratamento</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Elaine Psicologia. Todos os direitos reservados.</p>
+        <p style="font-size: 0.8rem; margin-top: 10px;">Desenvolvido com excelência.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
